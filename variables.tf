@@ -65,6 +65,7 @@ variable "git_credentials" {
 variable "namespace" {
   type        = string
   description = "The namespace where the application should be deployed"
+  default     = "openshift-operators"
 }
 
 variable "kubeseal_cert" {
@@ -82,6 +83,7 @@ variable "server_name" {
 variable "catalog" {
   type        = string
   description = "The catalog source that should be used to deploy the operator"
+  default     = "ibm-operator-catalog"
 }
 
 variable "catalog_namespace" {
@@ -93,5 +95,11 @@ variable "catalog_namespace" {
 variable "channel" {
   type        = string
   description = "The channel that should be used to deploy the operator"
-  default     = "v1.1-eus"
+  default     = "v1.5"
+}
+
+variable "platform_navigator_name" {
+  type        = string
+  description = "The name of the platform navigator instance"
+  default     = ""
 }
