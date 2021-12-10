@@ -1,6 +1,6 @@
 # IBM Cloud Pak ACE module
 
-Module to populate a gitops repository with the ACE operator from IBM Cloud Pak for Integration.
+Module to populate a gitops repository with the App Connect operator from IBM Cloud Pak for Integration.
 
 ## Software dependencies
 
@@ -8,7 +8,7 @@ The module depends on the following software components:
 
 ### Command-line tools
 
-- terraform - v14
+- terraform - v15
 
 ### Terraform providers
 
