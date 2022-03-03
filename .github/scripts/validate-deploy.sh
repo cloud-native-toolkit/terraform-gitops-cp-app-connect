@@ -44,7 +44,7 @@ count=0
 until kubectl get "${SUBSCRIPTION}" -n "${NAMESPACE}" || [[ $count -eq 20 ]]; do
   echo "Waiting for ${SUBSCRIPTION} in ${NAMESPACE}"
   count=$((count + 1))
-  sleep 15
+  sleep 60
 done
 
 if [[ $count -eq 20 ]]; then
@@ -59,7 +59,7 @@ count=0
 until kubectl get csv -n "${NAMESPACE}" -o json | "${BIN_DIR}/jq" -r '.items[] | .metadata.name' | grep -q "${CSV_NAME}" || [[ $count -eq 20 ]]; do
   echo "Waiting for ${CSV_NAME} csv in ${NAMESPACE}"
   count=$((count + 1))
-  sleep 15
+  sleep 60
 done
 
 if [[ $count -eq 20 ]]; then
