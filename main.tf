@@ -25,7 +25,7 @@ locals {
   application_branch = "main"
   layer_config = var.gitops_config[local.layer]
   
-  values_file = "values-${var.server_name}.yaml"
+  values_file = "values.yaml"
 }
 
 module setup_clis {
