@@ -1,2 +1,5 @@
 .idea/
 *.iml
+terraform.tfvars
+test/stages/bin2/
+test/stages/module
