@@ -2,10 +2,7 @@ locals {
   name          = "ibm-ace-operator"
   bin_dir       = module.setup_clis.bin_dir
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
-  layer = "services"
-  type  = "operators"
-  application_branch = "main"
-  layer_config = var.gitops_config[local.layer]
+
   values_content = {
     "ibm-ace-operator" = {
       subscriptions = {
@@ -22,7 +19,13 @@ locals {
       }
     }
   }
-  values_file = "values-${var.server_name}.yaml"
+  
+  layer = "services"
+  type  = "operators"
+  application_branch = "main"
+  layer_config = var.gitops_config[local.layer]
+  
+  values_file = "values.yaml"
 }
 
 module setup_clis {
