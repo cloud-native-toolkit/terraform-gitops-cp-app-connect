@@ -1,4 +1,4 @@
-ibm-ace-operator:
+ibm_ace_operator:
   subscriptions:
     ibmace:
       name: ibm-ace
