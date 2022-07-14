@@ -1,5 +1,3 @@
-global: {}
-
 ibm-ace-operator:
   subscriptions:
     ibmace:
