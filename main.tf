@@ -4,7 +4,7 @@ locals {
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
 
   values_content = {
-    "ibm-ace-operator" = {
+    "ibm_ace_operator" = {
       subscriptions = {
         ibmace = {
           name = "ibm-ace"
