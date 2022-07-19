@@ -9,6 +9,10 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   verify:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/cloudnativetoolkit/terraform:v1.1
+      options: --privileged --user root
     uses: cloud-native-toolkit/action-workflows/.github/workflows/verify-gitops-module.yaml@v1
     with:
       testcase: ocp4_latest_gitops_cp4i 
