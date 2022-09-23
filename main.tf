@@ -1,6 +1,5 @@
 locals {
   name          = "ibm-ace-operator"
-  bin_dir       = module.setup_clis.bin_dir
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
 
   values_content = {
@@ -27,11 +26,6 @@ locals {
   
   values_file = "values.yaml"
 }
-
-module setup_clis {
-  source = "github.com/cloud-native-toolkit/terraform-util-clis.git"
-}
-
 resource null_resource create_yaml {
   provisioner "local-exec" {
     command = "${path.module}/scripts/create-yaml.sh '${local.name}' '${local.yaml_dir}' '${local.values_file}'"
